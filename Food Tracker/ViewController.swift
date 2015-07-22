@@ -8,10 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    // MARK: Properties
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
 
+    // MARK: Actions
+    @IBAction func setDefaultLabelAction(sender: UIButton) {
+        nameLabel.text = "Default Text"
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        nameLabel.text = nameField.text
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nameField.delegate = self
     }
 
 }
