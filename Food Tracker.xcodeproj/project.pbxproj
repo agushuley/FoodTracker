@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		95EFF1C01B5FD4CB00BA860E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFF1BF1B5FD4CB00BA860E /* AppDelegate.swift */; };
 		95EFF1C21B5FD4CB00BA860E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFF1C11B5FD4CB00BA860E /* ViewController.swift */; };
-		95EFF1C51B5FD4CB00BA860E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EFF1C31B5FD4CB00BA860E /* Main.storyboard */; };
 		95EFF1C71B5FD4CB00BA860E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EFF1C61B5FD4CB00BA860E /* Assets.xcassets */; };
 		95EFF1CA1B5FD4CB00BA860E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EFF1C81B5FD4CB00BA860E /* LaunchScreen.storyboard */; };
 		95EFF1D51B5FD4CB00BA860E /* Food_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EFF1D41B5FD4CB00BA860E /* Food_TrackerTests.swift */; };
+		95EFF1E11B5FDFE300BA860E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EFF1DF1B5FDFE300BA860E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +29,13 @@
 		95EFF1BC1B5FD4CB00BA860E /* Food Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EFF1BF1B5FD4CB00BA860E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EFF1C11B5FD4CB00BA860E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95EFF1C41B5FD4CB00BA860E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95EFF1C61B5FD4CB00BA860E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95EFF1C91B5FD4CB00BA860E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EFF1CB1B5FD4CB00BA860E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EFF1D01B5FD4CB00BA860E /* Food TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Food TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EFF1D41B5FD4CB00BA860E /* Food_TrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food_TrackerTests.swift; sourceTree = "<group>"; };
 		95EFF1D61B5FD4CB00BA860E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95EFF1E01B5FDFE300BA860E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +77,9 @@
 		95EFF1BE1B5FD4CB00BA860E /* Food Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				95EFF1DF1B5FDFE300BA860E /* Main.storyboard */,
 				95EFF1BF1B5FD4CB00BA860E /* AppDelegate.swift */,
 				95EFF1C11B5FD4CB00BA860E /* ViewController.swift */,
-				95EFF1C31B5FD4CB00BA860E /* Main.storyboard */,
 				95EFF1C61B5FD4CB00BA860E /* Assets.xcassets */,
 				95EFF1C81B5FD4CB00BA860E /* LaunchScreen.storyboard */,
 				95EFF1CB1B5FD4CB00BA860E /* Info.plist */,
@@ -176,9 +176,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95EFF1E11B5FDFE300BA860E /* Main.storyboard in Resources */,
 				95EFF1CA1B5FD4CB00BA860E /* LaunchScreen.storyboard in Resources */,
 				95EFF1C71B5FD4CB00BA860E /* Assets.xcassets in Resources */,
-				95EFF1C51B5FD4CB00BA860E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,20 +220,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		95EFF1C31B5FD4CB00BA860E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95EFF1C41B5FD4CB00BA860E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		95EFF1C81B5FD4CB00BA860E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				95EFF1C91B5FD4CB00BA860E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		95EFF1DF1B5FDFE300BA860E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95EFF1E01B5FDFE300BA860E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

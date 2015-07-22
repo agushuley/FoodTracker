@@ -1,0 +1,12 @@
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "4OW-f4-ZZ2"; */
+"4OW-f4-ZZ2.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Meal name"; ObjectID = "Hdk-a5-e9f"; */
+"Hdk-a5-e9f.text" = "Meal name";
+
+/* Class = "UIButton"; normalTitle = "Set default label text"; ObjectID = "Qzf-TA-Km6"; */
+"Qzf-TA-Km6.normalTitle" = "Set default label text";
+
+/* Class = "UITextField"; placeholder = "Enter meal name"; ObjectID = "VSF-Yp-GtI"; */
+"VSF-Yp-GtI.placeholder" = "Enter meal name";
