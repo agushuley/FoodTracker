@@ -19,6 +19,7 @@ class ViewController:
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var starsSelector: RatingControl!
 
     // MARK: UITextFieldDelegate
     
@@ -52,10 +53,6 @@ class ViewController:
     }
     
     // MARK: Actions
-    
-    @IBAction func setDefaultLabelAction(sender: UIButton) {
-        nameLabel.text = "Default Text"
-    }
     
     @IBAction func selectImageFromLibraryAction(sender: UITapGestureRecognizer) {
         self.hideKeyboard()
