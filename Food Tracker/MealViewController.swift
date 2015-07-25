@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController:
+class MealViewController:
     UIViewController,
     UITextFieldDelegate,
     UIImagePickerControllerDelegate,
@@ -17,7 +17,6 @@ class ViewController:
     // MARK: Properties
     
     @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var starsSelector: RatingControl!
 
@@ -29,7 +28,6 @@ class ViewController:
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        nameLabel.text = nameField.text
     }
     
     // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
