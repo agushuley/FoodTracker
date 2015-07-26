@@ -27,5 +27,11 @@ class Meal {
         }
     }
     
+    var description: String {
+        get {
+            return "Meal: \(name), \(rating)*"
+        }
+    }
+    
     
 }

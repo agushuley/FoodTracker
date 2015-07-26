@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Your meals-->
+        <!--Meal Table View Controller-->
         <scene sceneID="Zma-oH-lNr">
             <objects>
                 <tableViewController id="7YJ-X9-cbG" customClass="MealTableViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,6 +47,7 @@
                                     <outlet property="mealImage" destination="Cnn-8H-jrd" id="DpE-km-6Dm"/>
                                     <outlet property="nameLabel" destination="i9Q-7e-X1y" id="jIh-1E-ygW"/>
                                     <outlet property="ratingControl" destination="s0A-Bz-ApL" id="7VJ-jk-DLy"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="UtM-dh-Cfp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -55,17 +56,17 @@
                             <outlet property="delegate" destination="7YJ-X9-cbG" id="e7F-nG-c0S"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your meals" id="yJI-Qt-0rF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7Sg-8d-d61">
+                    <navigationItem key="navigationItem" id="KbX-Pd-wrm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="doa-74-E7Y">
                             <connections>
-                                <segue destination="zbj-FG-3aB" kind="presentation" identifier="AddItem" id="x5k-PE-G1P"/>
+                                <segue destination="zbj-FG-3aB" kind="presentation" identifier="AddItem" id="gir-VB-GIW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jL2-3j-rKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="281"/>
+            <point key="canvasLocation" x="246" y="281"/>
         </scene>
         <!--New meal-->
         <scene sceneID="tne-QT-ifu">
@@ -216,10 +217,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jS1-DR-yR9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="963" y="281"/>
+            <point key="canvasLocation" x="1031" y="673"/>
         </scene>
     </scenes>
     <resources>
         <image name="defaultPhoto" width="160" height="160"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="UtM-dh-Cfp"/>
+    </inferredMetricsTieBreakers>
 </document>

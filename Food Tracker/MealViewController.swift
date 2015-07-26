@@ -22,8 +22,10 @@ class MealViewController:
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var ratingControl: RatingControl!
     
-    var meal: Meal?
-
+    let defaultImage = UIImage(named: "no image selected.png")
+    
+    var meal: Meal? = nil
+    
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -80,6 +82,19 @@ class MealViewController:
         super.viewDidLoad()
         
         nameField.delegate = self
+        
+        if let meal = meal {
+            navigationItem.title = meal.name
+            nameField.text = meal.name
+            if let image = meal.photo {
+                photoView.image = image
+            } else {
+                photoView.image = defaultImage
+            }
+            ratingControl.rating = meal.rating
+        }
+        
+        updateSaveStatusToText()
     }
 
     // MARK: Custom methods
