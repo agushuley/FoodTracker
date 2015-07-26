@@ -36,7 +36,7 @@ class MealTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.navigationItem.leftBarButtonItems?.append(editButtonItem())
+        self.navigationItem.leftBarButtonItem = editButtonItem()
         
         loadSampleMeals()
     }
