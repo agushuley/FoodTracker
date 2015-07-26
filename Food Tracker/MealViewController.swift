@@ -18,7 +18,11 @@ class MealViewController:
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var starsSelector: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var ratingControl: RatingControl!
+    
+    var meal: Meal?
 
     // MARK: UITextFieldDelegate
     
@@ -28,6 +32,15 @@ class MealViewController:
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
+        navigationItem.title = nameField.text
+        
+        updateSaveStatusToText()
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        saveButton.enabled = false
+        
+        updateSaveStatusToText()
     }
     
     // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -73,6 +86,22 @@ class MealViewController:
     
     func hideKeyboard() {
         nameField.resignFirstResponder()
+    }
+    
+    private func updateSaveStatusToText() {
+        saveButton.enabled = !(nameField.text ?? "").isEmpty
+    }
+    // MARK: Navigation
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if sender === saveButton {
+            let name = nameField.text ?? ""
+            let photo = photoView.image
+            let rating = ratingControl.rating
+            
+            meal = Meal(name: name, photo: photo, rating: rating)
+        }
     }
 }
 

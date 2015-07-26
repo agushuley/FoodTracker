@@ -14,7 +14,9 @@ class Meal {
     let name: String
     let photo: UIImage?
     let rating: Int
-    
+
+    // MARK: Constructor
+
     required init?(name: String, photo: UIImage?, rating: Int) {
         self.name = name
         self.photo = photo
