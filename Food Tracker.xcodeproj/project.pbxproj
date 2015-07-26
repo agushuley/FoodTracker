@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95A27B651B656CDB008A6857 /* MealsArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A27B641B656CDB008A6857 /* MealsArchive.swift */; };
 		95AF01F41B61146600EA8485 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AF01F31B61146600EA8485 /* Assets.xcassets */; };
 		95AF01F71B6258B000EA8485 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF01F61B6258B000EA8485 /* Meal.swift */; };
 		95AF01F81B6258B000EA8485 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF01F61B6258B000EA8485 /* Meal.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		95A27B641B656CDB008A6857 /* MealsArchive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsArchive.swift; sourceTree = "<group>"; };
 		95AF01F31B61146600EA8485 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95AF01F61B6258B000EA8485 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		95AF01F91B62635400EA8485 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				95AF01FE1B62E06B00EA8485 /* MealTableViewController.swift */,
 				95BEBEC21B61037100F9F309 /* RatingControl.swift */,
 				95EFF1C11B5FD4CB00BA860E /* MealViewController.swift */,
+				95A27B641B656CDB008A6857 /* MealsArchive.swift */,
 			);
 			path = "Food Tracker";
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				95EFF1C01B5FD4CB00BA860E /* AppDelegate.swift in Sources */,
 				95AF01FF1B62E06B00EA8485 /* MealTableViewController.swift in Sources */,
 				95AF01FA1B62635400EA8485 /* MealTableViewCell.swift in Sources */,
+				95A27B651B656CDB008A6857 /* MealsArchive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

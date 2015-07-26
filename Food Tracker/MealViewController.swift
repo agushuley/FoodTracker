@@ -22,8 +22,6 @@ class MealViewController:
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var ratingControl: RatingControl!
     
-    let defaultImage = UIImage(named: "no image selected.png")
-    
     var meal: Meal? = nil
     
     // MARK: UITextFieldDelegate
@@ -86,11 +84,7 @@ class MealViewController:
         if let meal = meal {
             navigationItem.title = meal.name
             nameField.text = meal.name
-            if let image = meal.photo {
-                photoView.image = image
-            } else {
-                photoView.image = defaultImage
-            }
+            photoView.image = meal.photo
             ratingControl.rating = meal.rating
         }
         
@@ -115,7 +109,7 @@ class MealViewController:
             let photo = photoView.image
             let rating = ratingControl.rating
             
-            meal = Meal(name: name, photo: photo, rating: rating)
+            meal = Meal(name: name, photo: photo!, rating: rating)
         }
     }
 }

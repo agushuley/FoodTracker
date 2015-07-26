@@ -28,9 +28,7 @@ class MealTableViewCell: UITableViewCell {
     
     func displayMeal(meal: Meal) {
         nameLabel.text = meal.name
-        if meal.photo != nil {
-            mealImage.image = meal.photo
-        }
+        mealImage.image = meal.photo
         ratingControl.rating = meal.rating
     }
 

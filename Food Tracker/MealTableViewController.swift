@@ -14,19 +14,6 @@ class MealTableViewController: UITableViewController {
     
     private var meals = [Meal]()
 
-    func loadSampleMeals() {
-        let photo1 = UIImage(named: "caprese.jpg")
-        let meal1 = Meal(name: "Caprese Salad", photo: photo1, rating: 4)!
-        
-        let photo2 = UIImage(named: "chiken_and_potatoes.jpg")
-        let meal2 = Meal(name: "Chicken and Potatoes", photo: photo2, rating: 5)!
-        
-        let photo3 = UIImage(named: "meatballs_pasta.jpg")
-        let meal3 = Meal(name: "Pasta with Meatballs", photo: photo3, rating: 3)!
-        
-        meals = [meal1, meal2, meal3]
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +25,7 @@ class MealTableViewController: UITableViewController {
         
         self.navigationItem.leftBarButtonItem = editButtonItem()
         
-        loadSampleMeals()
+        meals = MealsArchive.loadMeals()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +60,8 @@ class MealTableViewController: UITableViewController {
         if editingStyle == .Delete {
             // Delete the row from the data source
             meals.removeAtIndex(indexPath.row)
-            
+            MealsArchive.saveMeals(meals)
+
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -96,6 +84,8 @@ class MealTableViewController: UITableViewController {
                 meals.append(meal)
                 tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
+            
+            MealsArchive.saveMeals(meals)
         }
     }
     
