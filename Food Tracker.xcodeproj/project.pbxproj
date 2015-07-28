@@ -69,6 +69,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		953139E51B67772700B7DF9B /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				95AF01F61B6258B000EA8485 /* Meal.swift */,
+				95A27B641B656CDB008A6857 /* MealsArchive.swift */,
+			);
+			name = Meals;
+			sourceTree = "<group>";
+		};
+		953139E61B67776100B7DF9B /* MealsTable */ = {
+			isa = PBXGroup;
+			children = (
+				95AF01FE1B62E06B00EA8485 /* MealTableViewController.swift */,
+				95AF01F91B62635400EA8485 /* MealTableViewCell.swift */,
+			);
+			name = MealsTable;
+			sourceTree = "<group>";
+		};
 		95EFF1B31B5FD4CB00BA860E = {
 			isa = PBXGroup;
 			children = (
@@ -95,12 +113,10 @@
 				95EFF1CB1B5FD4CB00BA860E /* Info.plist */,
 				95EFF1C81B5FD4CB00BA860E /* LaunchScreen.storyboard */,
 				95EFF1DF1B5FDFE300BA860E /* Main.storyboard */,
-				95AF01F61B6258B000EA8485 /* Meal.swift */,
-				95AF01F91B62635400EA8485 /* MealTableViewCell.swift */,
-				95AF01FE1B62E06B00EA8485 /* MealTableViewController.swift */,
-				95BEBEC21B61037100F9F309 /* RatingControl.swift */,
+				953139E51B67772700B7DF9B /* Meals */,
+				953139E61B67776100B7DF9B /* MealsTable */,
 				95EFF1C11B5FD4CB00BA860E /* MealViewController.swift */,
-				95A27B641B656CDB008A6857 /* MealsArchive.swift */,
+				95BEBEC21B61037100F9F309 /* RatingControl.swift */,
 			);
 			path = "Food Tracker";
 			sourceTree = "<group>";
