@@ -20,9 +20,9 @@ class RatingControl: UIView {
         var buttons = [UIButton]()
         for _ in 0..<stars {
             let button = UIButton()
-            button.setImage(emptyStarImage, forState: .Normal)
-            button.setImage(filledStarImage, forState: .Selected)
-            button.setImage(filledStarImage, forState: [.Highlighted, .Selected])
+            button.setImage(emptyStarImage, for: UIControlState())
+            button.setImage(filledStarImage, for: .selected)
+            button.setImage(filledStarImage, for: [.highlighted, .selected])
 
             button.adjustsImageWhenHighlighted = false
             
@@ -33,30 +33,30 @@ class RatingControl: UIView {
         super.init(coder: aDecoder)
         
         for button in ratingButtons {
-            button.addTarget(self, action: "ratingButtonTapped:", forControlEvents: .TouchDown)
+            button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(_:)), for: .touchDown)
             addSubview(button)
         }
     }
     
     // MARK: Actions
     
-    func ratingButtonTapped(button: UIButton) {
-        rating = ratingButtons.indexOf(button)! + 1
+    func ratingButtonTapped(_ button: UIButton) {
+        rating = ratingButtons.index(of: button)! + 1
         
         updateButtonSelectionStates()
     }
     
     func updateButtonSelectionStates() {
-        for (index, button) in ratingButtons.enumerate() {
+        for (index, button) in ratingButtons.enumerated() {
             // If the index of a button is less than the rating, that button should be selected.
-            button.selected = index < rating
+            button.isSelected = index < rating
         }
     }
     
     override func layoutSubviews() {
         let buttonSize = Int(frame.size.height)
         
-        for (index, button) in ratingButtons.enumerate() {
+        for (index, button) in ratingButtons.enumerated() {
             button.frame.origin.x = CGFloat(index * (buttonSize + spacing))
             button.frame.origin.y = 0
             button.frame.size.height = CGFloat(buttonSize)

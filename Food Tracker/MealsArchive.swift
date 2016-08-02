@@ -8,15 +8,15 @@
 
 import Foundation
 
-class MealsArchive {
-    static private let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static private let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("meals")
+public class MealsArchive {
+    static private let DocumentsDirectory = FileManager().urlsForDirectory(.documentDirectory, inDomains: .userDomainMask).first!
+    static private let ArchiveURL = try! DocumentsDirectory.appendingPathComponent("meals")
     
     static func loadMeals() -> [Meal] {
-        return NSKeyedUnarchiver.unarchiveObjectWithFile(ArchiveURL.path!) as? [Meal] ?? []
+        return NSKeyedUnarchiver.unarchiveObject(withFile: ArchiveURL.path!) as? [Meal] ?? []
     }
     
-    static func saveMeals(meals: [Meal]) -> Bool {
+    static func saveMeals(_ meals: [Meal]) -> Bool {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(meals, toFile: ArchiveURL.path!)
         
         return isSuccessfulSave

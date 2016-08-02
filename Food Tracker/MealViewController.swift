@@ -26,31 +26,31 @@ class MealViewController:
     
     // MARK: UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.hideKeyboard()
         return true
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         navigationItem.title = nameField.text
         
         updateSaveStatusToText()
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
-        saveButton.enabled = false
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        saveButton.isEnabled = false
         
         updateSaveStatusToText()
     }
     
     // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
 
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             // Dismiss the picker if the user canceled
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController,
+    func imagePickerController(_ picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]
     ) {
         // The info dictionary contains multiple representations of the image, and this uses the original.
@@ -59,21 +59,21 @@ class MealViewController:
             photoView.image = selectedImage
             
             // Dismiss the picker.
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
     
     // MARK: Actions
     
-    @IBAction func selectImageFromLibraryAction(sender: UITapGestureRecognizer) {
+    @IBAction func selectImageFromLibraryAction(_ sender: UITapGestureRecognizer) {
         self.hideKeyboard()
         
         // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
-        imagePickerController.sourceType = .PhotoLibrary
+        imagePickerController.sourceType = .photoLibrary
         imagePickerController.delegate = self
         
-        presentViewController(imagePickerController, animated: true, completion: nil)
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -98,12 +98,12 @@ class MealViewController:
     }
     
     private func updateSaveStatusToText() {
-        saveButton.enabled = !(nameField.text ?? "").isEmpty
+        saveButton.isEnabled = !(nameField.text ?? "").isEmpty
     }
     // MARK: Navigation
     
     // This method lets you configure a view controller before it's presented.
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender === saveButton {
             let name = nameField.text ?? ""
             let photo = photoView.image

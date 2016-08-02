@@ -35,76 +35,76 @@ class MealTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meals.count
     }
 
     
     let cellIdentifier = "MealTableViewCell"
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MealTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MealTableViewCell
 
-        cell.displayMeal(meals[indexPath.row])
+        cell.displayMeal(meals[(indexPath as NSIndexPath).row])
 
         return cell
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle,
+        forRowAt indexPath: IndexPath
     ) {
-        if editingStyle == .Delete {
+        if editingStyle == .delete {
             // Delete the row from the data source
-            meals.removeAtIndex(indexPath.row)
+            meals.remove(at: (indexPath as NSIndexPath).row)
             MealsArchive.saveMeals(meals)
 
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
 
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
 
     
-    @IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+    @IBAction func unwindToMealList(_ sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? MealViewController, meal = sourceViewController.meal {
             if let selectedIndexPath = tableView.indexPathForSelectedRow {
-                meals[selectedIndexPath.row] = meal
-                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+                meals[(selectedIndexPath as NSIndexPath).row] = meal
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
             } else {
-            let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
+            let newIndexPath = IndexPath(row: meals.count, section: 0)
                 meals.append(meal)
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                tableView.insertRows(at: [newIndexPath], with: .bottom)
             }
             
             MealsArchive.saveMeals(meals)
         }
     }
     
-    @IBAction func cancel(sender: UIStoryboardSegue) {
+    @IBAction func cancel(_ sender: UIStoryboardSegue) {
         let isPresentingInAddMealMode = presentingViewController is UINavigationController
         
         if isPresentingInAddMealMode {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         } else {
-            navigationController!.popViewControllerAnimated(true)
+            navigationController!.popViewController(animated: true)
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowDetail" {
             if let mealDetailViewController = segue.destinationViewController as? MealViewController {
                 if let selectedMealCell = sender as? MealTableViewCell {
-                    let indexPath = tableView.indexPathForCell(selectedMealCell)!
-                    let meal = meals[indexPath.row]
+                    let indexPath = tableView.indexPath(for: selectedMealCell)!
+                    let meal = meals[(indexPath as NSIndexPath).row]
                     print("Editing meal: \(meal.description)")
                     mealDetailViewController.meal = meal
                 }

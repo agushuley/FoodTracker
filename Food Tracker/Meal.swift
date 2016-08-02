@@ -18,12 +18,12 @@ class Meal: NSObject, NSCoding {
     }
     
     let name: String
-    let photo: UIImage
+    let photo: UIImage?
     let rating: Int
 
     // MARK: Constructor
 
-    required init?(name: String, photo: UIImage, rating: Int) {
+    required init?(name: String, photo: UIImage?, rating: Int) {
         self.name = name
         self.photo = photo
         self.rating = rating
@@ -36,17 +36,17 @@ class Meal: NSObject, NSCoding {
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
-        let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as? String ?? ""
-        let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as! UIImage
-        let rating = aDecoder.decodeIntegerForKey(PropertyKey.ratingKey)
+        let name = aDecoder.decodeObject(forKey: PropertyKey.nameKey) as? String ?? ""
+        let photo = aDecoder.decodeObject(forKey: PropertyKey.photoKey) as! UIImage?
+        let rating = aDecoder.decodeInteger(forKey: PropertyKey.ratingKey)
         
         self.init(name: name, photo: photo, rating: rating)
     }
     
-    func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
-        aCoder.encodeObject(photo, forKey: PropertyKey.photoKey)
-        aCoder.encodeInteger(rating, forKey: PropertyKey.ratingKey)
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.nameKey)
+        aCoder.encode(photo, forKey: PropertyKey.photoKey)
+        aCoder.encode(rating, forKey: PropertyKey.ratingKey)
     }
     
 
